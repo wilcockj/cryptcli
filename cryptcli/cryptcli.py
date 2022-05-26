@@ -133,7 +133,9 @@ def hist(cryptos: List[str]):
     pltx.ylabel("Price (USD)")
     pltTitle = f"{interval['data']} price range of"
     for idx, crypto in enumerate(cryptos):
-        if idx < len(cryptos) - 1:
+        if len(cryptos) == 1:
+            pltTitle += f" {crypto}"
+        elif idx < len(cryptos) - 1:
             pltTitle += f" {crypto},"
         else:
             pltTitle += f" and {crypto}."
